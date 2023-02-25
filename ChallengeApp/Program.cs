@@ -1,4 +1,4 @@
-﻿
+﻿/*
 var varInt = int.MaxValue;
 var varUInt = uint.MaxValue;
 
@@ -31,7 +31,7 @@ else
 {
     Console.WriteLine("jednak varUInt jest większa niż varInt");
 }
-
+*/
 
 // zadanie dzień 4
 string firstName;
