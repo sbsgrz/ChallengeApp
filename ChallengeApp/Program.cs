@@ -21,8 +21,67 @@ Console.WriteLine(" Max zmiennej varDouble = " + varDouble);
 Console.WriteLine(" Max zmiennej varString = " + varString);
 Console.WriteLine(" Max zmiennej String + Int: " + varString + varInt);
 
-Console.ReadLine();
 
+
+if (varInt > varUInt)
+{
+    Console.WriteLine("varInt jest większa niż varUInt");
+}
+else
+{
+    Console.WriteLine("jednak varUInt jest większa niż varInt");
+}
+
+
+// zadanie dzień 4
+string firstName;
+int age;
+char sex;
+
+Console.WriteLine("Podaj imię:");
+firstName = Console.ReadLine();
+
+Console.WriteLine("Podaj wiek");
+age = Convert.ToInt16(Console.ReadLine());
+
+Console.WriteLine("Podaj płeć (k - kobieta, m - mężczyzna)");
+sex = Console.ReadKey().KeyChar;
+Console.WriteLine();
+
+if (!(sex == 'k' || sex == 'm'))
+{
+    Console.WriteLine("Podałeś nieprawidłowe dane - KONIEC PROGRAMU!!!");
+}
+else if(age < 30 && sex == 'k')
+{
+    Console.WriteLine("Kobieta poniżej 30 lat");
+}
+else if(firstName == "Ewa" && age == 33)
+{
+    Console.WriteLine("Ewa lat 33");
+}
+else if(sex == 'm' && age < 18)
+{
+    Console.WriteLine("Niepełnoletni mężczyzna");
+}
+else if(sex == 'k')
+{
+    Console.WriteLine(firstName + ", kobieta, lat " + age);
+}
+else if(sex == 'm')
+{
+    Console.WriteLine(firstName + ", mężczyzna, lat " + age);
+}
+else
+{
+    Console.WriteLine("Wprowadziłeś nieprawidłowe dane");
+}
+
+
+
+
+
+Console.ReadLine();
 // ==
 // <
 // >
