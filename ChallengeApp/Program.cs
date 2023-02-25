@@ -22,3 +22,14 @@ Console.WriteLine(" Max zmiennej varString = " + varString);
 Console.WriteLine(" Max zmiennej String + Int: " + varString + varInt);
 
 Console.ReadLine();
+
+// ==
+// <
+// >
+// <=
+// >=
+
+// && - and
+// || - or
+// !  - no fucking way
+
