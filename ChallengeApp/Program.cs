@@ -11,13 +11,14 @@ var varDouble = double.MaxValue;
 var varString = string.Empty;
 varString = "Oto String";
 
-Console.WriteLine("varInt = " + varInt);
-Console.WriteLine("varUInt = " + varUInt);
-Console.WriteLine("varLong = " + (long)varLong);
-Console.WriteLine("varULong = " + varULong);
-Console.WriteLine("varFloat = " + varFloat);
-Console.WriteLine("varDouble = " + varDouble);
-Console.WriteLine("varString = " + varString);
-Console.WriteLine("String + Int: " + varString + varInt);
+Console.WriteLine();
+Console.WriteLine(" Max zmiennej varInt = " + varInt);
+Console.WriteLine(" Max zmiennej varUInt = " + varUInt);
+Console.WriteLine(" Max zmiennej varLong = " + (long)varLong);
+Console.WriteLine(" Max zmiennej varULong = " + varULong);
+Console.WriteLine(" Max zmiennej varFloat = " + varFloat);
+Console.WriteLine(" Max zmiennej varDouble = " + varDouble);
+Console.WriteLine(" Max zmiennej varString = " + varString);
+Console.WriteLine(" Max zmiennej String + Int: " + varString + varInt);
 
 Console.ReadLine();
