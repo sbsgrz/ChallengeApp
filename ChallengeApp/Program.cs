@@ -1,17 +1,15 @@
-﻿// konwersja dni na lata, tygodnie i dni
+﻿// odwrotność liczby
 
-int days = 0, years = 0, weeks = 0;
+int number = 0;
+int reverseNumber = 0;
 
-Console.WriteLine("Podaj liczbę dni.");
-days = int.Parse(Console.ReadLine());
+Console.WriteLine("Podaj liczbę");
+number = int.Parse(Console.ReadLine());
 
-years = days / 365;
-days = days % 365;
-weeks = days / 7;
-days = days % 7;
+while(number > 0)
+{
+    reverseNumber = reverseNumber * 10 + (number % 10);
+    number /= 10;
+}
 
-
-Console.WriteLine("W przeliczeniu na lata i tygodnie: " + years + " lat, " + weeks + " tygodni, " + days + " dni.");
-
-
-
+Console.WriteLine(reverseNumber);
