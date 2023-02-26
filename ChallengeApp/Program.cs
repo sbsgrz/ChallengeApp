@@ -1,14 +1,27 @@
-﻿// alfabet
+﻿// Dni tygodnia
 
-char startletter = 'A';
-char endletter = 'Z';
+string[] daysOfWeek = new string[] { "poniedziałek", "wtorek", "środa","czwartek","piątek","sobota","niedziela" };
+int day = 0;
 
-for(char i = startletter; i <= endletter;i++)
-{
-    Console.Write(i);
-    Console.Write(' ');
-}
+do {
+    Console.WriteLine("Który dzień tygodnia Cię interesuje? (0 - koniec programu");
+    day = int.Parse(Console.ReadLine());
+
+    if (day > 0 && day < 8)
+        Console.WriteLine(daysOfWeek[day - 1]);
+    else if (day != 0)
+        Console.WriteLine("Wartość nieprawidłowa!!!");
+    else
+    {
+        Console.WriteLine("Koniec programu!");
+        Console.ReadLine();
+    }
+} while (day != 0) ;
 
 
 
- 
+
+
+
+
+
