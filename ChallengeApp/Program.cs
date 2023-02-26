@@ -1,27 +1,14 @@
-﻿// maksymalna liczba z 3
+﻿// alfabet
 
-List<int> list = new List<int>();
-int max;
-int ilosc_max = 0;
+char startletter = 'A';
+char endletter = 'Z';
 
-Console.WriteLine("Podaj pierwszą liczbę");
-list.Add(Convert.ToInt32(Console.ReadLine()));
-
-Console.WriteLine("Podaj drugą liczbę");
-list.Add(Convert.ToInt32(Console.ReadLine()));
-
-Console.WriteLine("Podaj trzecią liczbę");
-list.Add(Convert.ToInt32(Console.ReadLine()));
-
-max = list.Max();
-
-foreach (int i in list)
-    if (i == max)
-        ilosc_max++;
-
-Console.WriteLine("Maksymalna liczba to: " + list.Max() + ". Jest " + ilosc_max + " takich liczb.");
+for(char i = startletter; i <= endletter;i++)
+{
+    Console.Write(i);
+    Console.Write(' ');
+}
 
 
-Console.ReadLine();
 
-
+ 
