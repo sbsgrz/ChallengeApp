@@ -1,28 +1,17 @@
-﻿// Dni tygodnia
+﻿// konwersja dni na lata, tygodnie i dni
 
-string[] daysOfWeek = new string[] { "poniedziałek", "wtorek", "środa","czwartek","piątek","sobota","niedziela" };
-int day = 0;
+int days = 0, years = 0, weeks = 0;
 
-do {
-    
-    Console.WriteLine("\nKtóry dzień tygodnia Cię interesuje? (0 - koniec programu)");
-    day = int.Parse(Console.ReadLine());
+Console.WriteLine("Podaj liczbę dni.");
+days = int.Parse(Console.ReadLine());
 
-    if (day > 0 && day < 8)
-        Console.WriteLine(daysOfWeek[day - 1]);
-    else if (day != 0)
-        Console.WriteLine("Wartość nieprawidłowa!!!");
-    else
-    {
-        Console.WriteLine("Koniec programu!");
-        Console.ReadLine();
-    }
-} while (day != 0) ;
+years = days / 365;
+days = days % 365;
+weeks = days / 7;
+days = days % 7;
 
 
-
-
-
+Console.WriteLine("W przeliczeniu na lata i tygodnie: " + years + " lat, " + weeks + " tygodni, " + days + " dni.");
 
 
 
