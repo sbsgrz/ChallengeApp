@@ -1,131 +1,45 @@
-﻿/*
-var varInt = int.MaxValue;
-var varUInt = uint.MaxValue;
+﻿int number = 0;
+string numberInString;
+char[] letters;
+int[] rejestr  = new int[10];
 
-var varLong = long.MaxValue;
-var varULong = ulong.MaxValue;
+for (int i = 0; i < 10; i++)
+    rejestr[i] = 0;
 
-var varFloat = float.MaxValue;
-var varDouble = double.MaxValue;
+Console.WriteLine("Podaj liczbę");
+number = Convert.ToInt32(Console.ReadLine());
 
-var varString = string.Empty;
-varString = "Oto String";
-
-Console.WriteLine();
-Console.WriteLine(" Max zmiennej varInt = " + varInt);
-Console.WriteLine(" Max zmiennej varUInt = " + varUInt);
-Console.WriteLine(" Max zmiennej varLong = " + (long)varLong);
-Console.WriteLine(" Max zmiennej varULong = " + varULong);
-Console.WriteLine(" Max zmiennej varFloat = " + varFloat);
-Console.WriteLine(" Max zmiennej varDouble = " + varDouble);
-Console.WriteLine(" Max zmiennej varString = " + varString);
-Console.WriteLine(" Max zmiennej String + Int: " + varString + varInt);
+numberInString = number.ToString();
+letters = numberInString.ToArray(); 
 
 
-
-if (varInt > varUInt)
+foreach(var c in letters)
 {
-    Console.WriteLine("varInt jest większa niż varUInt");
-}
-else
-{
-    Console.WriteLine("jednak varUInt jest większa niż varInt");
-}
-*/
-
-
-// zadanie dzień 4
-string firstName;
-int age;
-char sex;
-
-Console.WriteLine("Podaj imię:");
-firstName = Console.ReadLine();
-
-Console.WriteLine("Podaj wiek");
-age = Convert.ToInt16(Console.ReadLine());
-
-Console.WriteLine("Podaj płeć (k - kobieta, m - mężczyzna)");
-sex = Console.ReadKey().KeyChar;
-Console.WriteLine();
-
-if (!(sex == 'k' || sex == 'm'))
-{
-    Console.WriteLine("Podałeś nieprawidłowe dane - KONIEC PROGRAMU!!!");
-}
-else if(age < 30 && sex == 'k')
-{
-    Console.WriteLine("Kobieta poniżej 30 lat");
-}
-else if(firstName == "Ewa" && age == 33)
-{
-    Console.WriteLine("Ewa lat 33");
-}
-else if(sex == 'm' && age < 18)
-{
-    Console.WriteLine("Niepełnoletni mężczyzna");
-}
-else if(sex == 'k')
-{
-    Console.WriteLine(firstName + ", kobieta, lat " + age);
-}
-else if(sex == 'm')
-{
-    Console.WriteLine(firstName + ", mężczyzna, lat " + age);
-}
-else
-{
-    Console.WriteLine("Wprowadziłeś nieprawidłowe dane");
+    if (c == '0')
+        rejestr[0]++;
+    else if (c == '1')
+        rejestr[1]++;
+    else if (c == '2')
+        rejestr[2]++;
+    else if (c == '3')
+        rejestr[3]++;
+    else if (c == '4')
+        rejestr[4]++;
+    else if (c == '5')
+        rejestr[5]++;
+    else if (c == '6')
+        rejestr[6]++;
+    else if (c == '7')
+        rejestr[7]++;
+    else if (c == '8')
+        rejestr[8]++;
+    else if (c == '9')
+        rejestr[9]++;
 }
 
-
-
-
-
-Console.ReadLine();
-// ==
-// <
-// >
-// <=
-// >=
-
-// && - and
-// || - or
-// !  - no fucking way
-
-
-// dzień 5
-
-// tablice
-string[] daysOfWeek = { "poniedzialek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela" };
-
-
-for(int i = 0;      i < 10; i++)
+for(int i=0; i< 10; i++)
 {
-    Console.WriteLine(i);
+    Console.WriteLine(i + " => " + rejestr[i]);
 }
 
-// Listy
-List<string> daysOfWeekList = new List<string>();
-daysOfWeekList.Add("poniedziałek");
-daysOfWeekList.Add("wtorek");
-daysOfWeekList.Add("środa");
-daysOfWeekList.Add("środa");
-daysOfWeekList.Add("czwartek");
-daysOfWeekList.Add("piątek");
-daysOfWeekList.Add("sobota");
-daysOfWeekList.Add("niedziela");
-
-for(int i=0; i < daysOfWeekList.Count; i++)
-{
-    Console.WriteLine(daysOfWeekList[i]);
-}
-
-Console.ReadLine();
-
-daysOfWeekList.Remove("środa");
-if (daysOfWeekList.Contains("czwartek"))
-    Console.WriteLine("CZWARTEK JEST NA LIŚCIE");
-
-foreach(string day in daysOfWeekList)
-    Console.Write(day + " ");
+Console.ReadLine(); 
