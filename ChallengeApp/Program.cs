@@ -33,6 +33,7 @@ else
 }
 */
 
+
 // zadanie dzień 4
 string firstName;
 int age;
@@ -92,3 +93,38 @@ Console.ReadLine();
 // || - or
 // !  - no fucking way
 
+
+// dzień 5
+
+// tablice
+string[] daysOfWeek = { "poniedzialek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela" };
+
+
+for(int i = 0;      i < 10; i++)
+{
+    Console.WriteLine(i);
+}
+
+// Listy
+List<string> daysOfWeekList = new List<string>();
+daysOfWeekList.Add("poniedziałek");
+daysOfWeekList.Add("wtorek");
+daysOfWeekList.Add("środa");
+daysOfWeekList.Add("środa");
+daysOfWeekList.Add("czwartek");
+daysOfWeekList.Add("piątek");
+daysOfWeekList.Add("sobota");
+daysOfWeekList.Add("niedziela");
+
+for(int i=0; i < daysOfWeekList.Count; i++)
+{
+    Console.WriteLine(daysOfWeekList[i]);
+}
+
+Console.ReadLine();
+
+daysOfWeekList.Remove("środa");
+ifdaysOfWeekList.Contains("czwartek");
+
+foreach(string day in daysOfWeekList)
+    Console.Write(day + " ");
