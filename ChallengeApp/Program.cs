@@ -4,7 +4,8 @@ string[] daysOfWeek = new string[] { "poniedziałek", "wtorek", "środa","czwart
 int day = 0;
 
 do {
-    Console.WriteLine("Który dzień tygodnia Cię interesuje? (0 - koniec programu");
+    
+    Console.WriteLine("\nKtóry dzień tygodnia Cię interesuje? (0 - koniec programu)");
     day = int.Parse(Console.ReadLine());
 
     if (day > 0 && day < 8)
