@@ -1,6 +1,5 @@
 ﻿// maksymalna liczba z 3
 
-int ilosc = 3;
 List<int> list = new List<int>();
 int max;
 int ilosc_max = 0;
@@ -17,7 +16,7 @@ list.Add(Convert.ToInt32(Console.ReadLine()));
 max = list.Max();
 
 foreach (int i in list)
-    if (list[i] == max)
+    if (i == max)
         ilosc_max++;
 
 Console.WriteLine("Maksymalna liczba to: " + list.Max() + ". Jest " + ilosc_max + " takich liczb.");
