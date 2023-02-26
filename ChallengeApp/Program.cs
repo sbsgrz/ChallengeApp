@@ -1,10 +1,10 @@
 ﻿// odwrotność liczby
 
-int number = 0;
-int reverseNumber = 0;
+ulong number = 0;
+ulong reverseNumber = 0;
 
 Console.WriteLine("Podaj liczbę");
-number = int.Parse(Console.ReadLine());
+number = ulong.Parse(Console.ReadLine());
 
 while(number > 0)
 {
