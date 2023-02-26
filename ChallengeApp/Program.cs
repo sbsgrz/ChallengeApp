@@ -1,15 +1,16 @@
-﻿// odwrotność liczby
+﻿// max, min, avg
 
-ulong number = 0;
-ulong reverseNumber = 0;
+List<int> list = new List<int>();
 
-Console.WriteLine("Podaj liczbę");
-number = ulong.Parse(Console.ReadLine());
+Console.WriteLine("Podaj 9 liczb. Zatwierdź enterem każdą z nich");
 
-while(number > 0)
+for(int i=0; i<9; i++)
 {
-    reverseNumber = reverseNumber * 10 + (number % 10);
-    number /= 10;
+    list.Add(int.Parse(Console.ReadLine()));
 }
 
-Console.WriteLine(reverseNumber);
+Console.WriteLine("Max: " + list.Max());
+Console.WriteLine("Min: " + list.Min());
+Console.WriteLine("Avg: " + list.Average());
+
+Console.ReadLine();
