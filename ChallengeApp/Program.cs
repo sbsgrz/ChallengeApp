@@ -124,7 +124,8 @@ for(int i=0; i < daysOfWeekList.Count; i++)
 Console.ReadLine();
 
 daysOfWeekList.Remove("środa");
-ifdaysOfWeekList.Contains("czwartek");
+if (daysOfWeekList.Contains("czwartek"))
+    Console.WriteLine("CZWARTEK JEST NA LIŚCIE");
 
 foreach(string day in daysOfWeekList)
     Console.Write(day + " ");
