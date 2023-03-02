@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChallengeApp
 {
-    class Emploee
+    public class Emploee
     {
         static int emploeeCount = 0;
         private string firstName;
@@ -20,7 +20,7 @@ namespace ChallengeApp
         public string FirstName { get { return firstName; } set { firstName = value; } }
         public string LastName { get { return lastName;} set { lastName = value; } }
         
-
+         
         public Emploee()
         { 
             firstName= string.Empty;

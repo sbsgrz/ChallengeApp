@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChallengeApp
 {
-    class User
+    public class User
     {
         public static string GameName = "Diablo";
 

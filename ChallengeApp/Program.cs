@@ -1,14 +1,15 @@
-﻿// Klasy
+﻿// Klasy dzień 6
 using ChallengeApp;
 
 var e1 = new Emploee("Jan", "Kowalski", 35);
 var e2 = new Emploee("Robert", "Ćwiąkalski", 41);
 var e3 = new Emploee("Julita", "Dąbrowska", 39);
 
-List<Emploee> listEmploee = new List<Emploee>();
-listEmploee.Add(e1);
+List<Emploee> listEmploee = new List<Emploee> {  e1, e2, e3};
+/*listEmploee.Add(e1);
 listEmploee.Add(e2);
 listEmploee.Add(e3);
+*/
 
 Random r = new();
 
@@ -26,7 +27,7 @@ foreach(var e in listEmploee)
     if (e.result > theWinner.result)
         theWinner = e;
 }
-
+Console.WriteLine();
 Console.WriteLine("And the winner is: " + theWinner.FirstName + " " + theWinner.LastName + " - score: " + theWinner.result);
 
 /*
