@@ -19,7 +19,8 @@ namespace ChallengeApp
 
         public string FirstName { get { return firstName; } set { firstName = value; } }
         public string LastName { get { return lastName;} set { lastName = value; } }
-        
+        public uint Age { get { return age; } set { age = value; } }    
+
          
         public Emploee()
         { 
@@ -37,9 +38,36 @@ namespace ChallengeApp
             Emploee.emploeeCount++;
         }
 
-        public void AddScore(int score)
+        public bool AddScore(int score)
         {
-            this.score.Add(score);
+            if (score < 0)
+            {
+                return false;
+            }
+            else
+            {
+                this.score.Add(score);
+                return true;
+            }
+        }
+
+        public bool RemoveScore(int score) 
+        {
+            if (score <= 0) 
+            { 
+                this.score.Add(score);
+                return true;
+            }
+            else if(score > 0)
+            {
+                score = -score;
+                this.score.Add(score);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
