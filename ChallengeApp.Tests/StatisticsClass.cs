@@ -1,17 +1,70 @@
-using System.Reflection.Metadata;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ChallengeApp.Tests
 {
-    public class EmploeeTests
+    public class StatisticsClass
     {
         [Test]
-        public void WhenUserCollectTwogradess_ShouldCorrectResults()
+        public void WhenUserDontCollectAnyGrades_SumShouldRemove0()
+        {
+            // arrange
+            var emploee = new Emploee("Jan","Kowalski",30);
+
+            // act
+
+            // assert
+            Assert.AreEqual(0, emploee.GetStatistics().Sum);
+        }
+        
+        [Test]
+        public void WhenUserDontCollectAnyGrades_MinShouldRemove0()
+        {
+            // arrange
+            var emploee = new Emploee("Jan", "Kowalski", 30);
+
+            // act
+
+            // assert
+            Assert.AreEqual(0, emploee.GetStatistics().Min);
+        }
+        
+        [Test]
+        public void WhenUserDontCollectAnyGrades_MaxShouldRemove0()
+        {
+            // arrange
+            var emploee = new Emploee("Jan", "Kowalski", 30);
+
+            // act
+
+            // assert
+            Assert.AreEqual(0, emploee.GetStatistics().Max);
+        }
+        
+        [Test]
+        public void WhenUserDontCollectAnyGrades_AverageShouldRemove0()
+        {
+            // arrange
+            var emploee = new Emploee("Jan", "Kowalski", 30);
+
+            // act
+
+            // assert
+            Assert.AreEqual(0, emploee.GetStatistics().Average);
+
+        }
+
+        [Test]
+        public void WhenUserCollectTwogradess_ShouldReturnCorrectResults()
         {
             // arrange
             var e = new Emploee("Jan", "Kowalski", 30);
             e.AddGrades(5);
             e.AddGrades(10);
-            
+
             // act
             Statistics result = e.GetStatistics();
 
@@ -23,7 +76,7 @@ namespace ChallengeApp.Tests
         }
 
         [Test]
-        public void WhenUserCollectOnegradesAndLostOne_ShouldCorrectResult()
+        public void WhenUserCollectOnegradesAndLostOne_ShouldReturnCorrectResult()
         {
             //arrange
             var e = new Emploee("Jan", "Kowalski", 30);
@@ -34,7 +87,7 @@ namespace ChallengeApp.Tests
             Statistics result = e.GetStatistics();
 
             //assert
-            Assert.AreEqual(8,result.Sum);
+            Assert.AreEqual(8, result.Sum);
         }
 
         [Test]

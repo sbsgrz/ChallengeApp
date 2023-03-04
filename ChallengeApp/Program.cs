@@ -9,33 +9,33 @@ List<Emploee> listEmploee = new(){ e1, e2, e3};
 
 
 Random r = new();
-int score;
+int grades;
 foreach (var e in listEmploee)
 {
     for (int i = 0; i < 10; i++)
     {
-        score = r.Next(50);
+        grades = r.Next(50);
         if(i % 10 == 0)
         {
-            score = -score;
+            grades = -grades;
         }
         
         if(r.Next(2) == 1)
         { 
-            if(e.AddScore(score))
+            if(e.AddGrades(grades))
             {
-                Console.WriteLine("Dodano " + score + " punktów pracownikowi: " + e.FirstName + " " + e.LastName);
+                Console.WriteLine("Dodano " + grades + " punktów pracownikowi: " + e.FirstName + " " + e.LastName);
             }
-            else if(!e.AddScore(score))
+            else if(!e.AddGrades(grades))
             {
-                Console.WriteLine("BŁĄD!!! Próbujesz dodać liczbę ujemną - użyj funkcji RemoveScore()!");
+                Console.WriteLine("BŁĄD!!! Próbujesz dodać liczbę ujemną - użyj funkcji RemoveGrades()!");
             }
         }
         else
         {
-            if(e.RemoveScore(score))
+            if(e.RemoveGrades(grades))
             {
-                Console.WriteLine("Odjęto " + score + " punktów pracownikowi: " + e.FirstName + " " + e.LastName);
+                Console.WriteLine("Odjęto " + grades + " punktów pracownikowi: " + e.FirstName + " " + e.LastName);
             }
             else
             {
@@ -50,27 +50,9 @@ var theWinner = new Emploee();
 
 foreach(var e in listEmploee)
 {
-    Console.WriteLine(e.FirstName+ " " + e.LastName + " - score: " + e.result);
-    if (e.result > theWinner.result)
+    Console.WriteLine(e.FirstName+ " " + e.LastName + " - grades: " + e.GetStatistics().Sum);
+    if (e.GetStatistics().Sum > theWinner.GetStatistics().Sum)
         theWinner = e;
 }
 Console.WriteLine();
-Console.WriteLine("And the winner is: " + theWinner.FirstName + " " + theWinner.LastName + " - score: " + theWinner.result);
-
-/*
-User user1= new User();
-User user2= new User("Anna","ddffssaa");
-
-user1.AddScore(10);
-user1.AddScore(5);
-user1.AddScore(15);
-user1.AddScore(20);
-user1.AddScore(5);
-
-user2.AddScore(20);
-user2.AddScore(10);
-user2.AddScore(25);
-
-var result1 = user1.Result;
-var result2 = user2.Result;
-*/
+Console.WriteLine("And the winner is: " + theWinner.FirstName + " " + theWinner.LastName + " - grades: " + theWinner.GetStatistics().Sum);

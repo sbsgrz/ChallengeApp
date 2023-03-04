@@ -13,9 +13,9 @@ namespace ChallengeApp
         private string lastName; 
         private uint age;
 
-        private List<int> score = new List<int>();
+        private List<float> grades = new List<float>();
 
-        public int result => this.score.Sum();
+        //public int result => this.grades.Sum();
 
         public string FirstName { get { return firstName; } set { firstName = value; } }
         public string LastName { get { return lastName;} set { lastName = value; } }
@@ -38,36 +38,66 @@ namespace ChallengeApp
             Emploee.emploeeCount++;
         }
 
-        public bool AddScore(int score)
+        public bool AddGrades(int grades)
         {
-            if (score < 0)
+            if (grades < 0)
             {
                 return false;
             }
             else
             {
-                this.score.Add(score);
+                this.grades.Add(grades);
                 return true;
             }
         }
 
-        public bool RemoveScore(int score) 
+        public bool RemoveGrades(int grades) 
         {
-            if (score <= 0) 
+            if (grades <= 0) 
             { 
-                this.score.Add(score);
+                this.grades.Add(grades);
                 return true;
             }
-            else if(score > 0)
+            else if(grades > 0)
             {
-                score = -score;
-                this.score.Add(score);
+                grades = -grades;
+                this.grades.Add(grades);
                 return true;
             }
             else
             {
                 return false;
             }
+        }
+
+        public Statistics GetStatistics()
+        {
+            Statistics statistics = new Statistics();
+
+            if (this.grades.Count > 0)
+            {
+                statistics.Min = float.MaxValue;
+                statistics.Max = float.MinValue;
+                statistics.Average = 0;
+
+
+                foreach (float grade in this.grades)
+                {
+                    statistics.Max = Math.Max(statistics.Max, grade);
+                    statistics.Min = Math.Min(statistics.Min, grade);
+                    statistics.Sum += grade;
+                }
+
+                statistics.Average = statistics.Sum / grades.Count();
+            }
+            else
+            {
+                statistics.Min = 0;
+                statistics.Max = 0;
+                statistics.Average = 0;
+                statistics.Sum = 0;
+            }
+            return statistics;
         }
     }
 }

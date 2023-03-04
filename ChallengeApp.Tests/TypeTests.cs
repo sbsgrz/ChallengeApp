@@ -3,7 +3,7 @@
     internal class TypeTests
     {
         [Test]
-        public void Test()
+        public void WhenCompareTwoReferenceVariablesPointingObjectsWithTheSameProperties_ShouldNotBeEqual()
         {
             // arrange
             var emploee1 = new Emploee("Jan", "Kowalski", 20);
@@ -16,7 +16,7 @@
         }
 
         [Test]
-        public void Test2() 
+        public void WhenCompareTwoReferenceVariablesPointingTheSameObject_ShouldNotBeEqual() 
         {
             // arrange
             var emploee1 = new Emploee("Jan", "Kowalski", 20);
