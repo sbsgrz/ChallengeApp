@@ -14,25 +14,22 @@ foreach (var e in listEmploee)
 {
     for (int i = 0; i < 10; i++)
     {
-        grades = r.Next(50);
-        if(i % 10 == 0)
-        {
-            grades = -grades;
-        }
+        grades = r.Next(100);
         
-        if(r.Next(2) == 1)
-        { 
-            if(e.AddGrades(grades))
-            {
-                Console.WriteLine("Dodano " + grades + " punktów pracownikowi: " + e.FirstName + " " + e.LastName);
-            }
-            else if(!e.AddGrades(grades))
-            {
-                Console.WriteLine("BŁĄD!!! Próbujesz dodać liczbę ujemną - użyj funkcji RemoveGrades()!");
-            }
-        }
-        else
+        if(i % 10 == 0)
+            grades = -grades;
+
+        if(e.AddGrades(grades))
         {
+            Console.WriteLine($"Dodano {grades} punktów pracownikowi: {e.FirstName} {e.LastName}");
+        }
+        else if(!e.AddGrades(grades))
+        {
+            // Console.WriteLine("BŁĄD!!! Próbujesz dodać liczbę ujemną - użyj funkcji RemoveGrades()!");
+            Console.WriteLine($"Pracownik {e.FirstName} {e.LastName} funkcja AddGrade - podana wartość jest poza skalą");
+        }
+
+        /*
             if(e.RemoveGrades(grades))
             {
                 Console.WriteLine("Odjęto " + grades + " punktów pracownikowi: " + e.FirstName + " " + e.LastName);
@@ -41,7 +38,7 @@ foreach (var e in listEmploee)
             {
                 Console.WriteLine("NIEOBSŁUGIWANY BŁĄD!!!");
             }
-        }
+        */
     }
 }
 

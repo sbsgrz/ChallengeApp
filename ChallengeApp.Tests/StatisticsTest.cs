@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChallengeApp.Tests
 {
-    public class StatisticsClass
+    public class StatisticsTest
     {
         [Test]
         public void WhenUserDontCollectAnyGrades_SumShouldRemove0()
@@ -75,6 +75,7 @@ namespace ChallengeApp.Tests
             // Assert.Pass();
         }
 
+        /*
         [Test]
         public void WhenUserCollectOnegradesAndLostOne_ShouldReturnCorrectResult()
         {
@@ -89,6 +90,7 @@ namespace ChallengeApp.Tests
             //assert
             Assert.AreEqual(8, result.Sum);
         }
+        */
 
         [Test]
         public void WhenUserTryToAddGradesWithNegativeNumber_ShouldDoNotAdd()
@@ -105,6 +107,9 @@ namespace ChallengeApp.Tests
             Assert.AreEqual(10, result.Sum);
         }
 
+
+
+        /*
         [Test]
         public void WhenUserTryToRemoveGradesWithNegativeNumber_ShouldRemove()
         {
@@ -134,5 +139,6 @@ namespace ChallengeApp.Tests
             //assert
             Assert.AreEqual(15, result.Sum);
         }
+        */
     }
 }

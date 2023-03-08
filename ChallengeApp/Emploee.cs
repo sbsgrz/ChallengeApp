@@ -38,19 +38,34 @@ namespace ChallengeApp
             Emploee.emploeeCount++;
         }
 
-        public bool AddGrades(int grades)
+        public bool AddGrades(float grades)
         {
-            if (grades < 0)
-            {
-                return false;
-            }
-            else
+            if (grades >= 0 && grades <=100)
             {
                 this.grades.Add(grades);
                 return true;
             }
+            else
+            {
+                return false;
+                // Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade - podana wartość jest poza skalą");
+            }
         }
 
+        public bool AddGrades(string grades)
+        {
+            int a = 5;
+            float.TryParse(a, out float resutl);
+
+            if (float.TryParse(grades, out float result))
+            {
+                this.AddGrades(result); 
+                return true;
+            }
+            else
+                return false;  
+        }
+        /*
         public bool RemoveGrades(int grades) 
         {
             if (grades <= 0) 
@@ -69,6 +84,7 @@ namespace ChallengeApp
                 return false;
             }
         }
+        */
 
         public Statistics GetStatistics()
         {
