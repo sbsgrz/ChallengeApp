@@ -10,7 +10,7 @@ namespace ChallengeApp
     {
         static int emploeeCount = 0;
         private string firstName;
-        private string lastName; 
+        private string lastName;
         private uint age;
 
         private List<float> grades = new List<float>();
@@ -18,15 +18,15 @@ namespace ChallengeApp
         //public int result => this.grades.Sum();
 
         public string FirstName { get { return firstName; } set { firstName = value; } }
-        public string LastName { get { return lastName;} set { lastName = value; } }
-        public uint Age { get { return age; } set { age = value; } }    
+        public string LastName { get { return lastName; } set { lastName = value; } }
+        public uint Age { get { return age; } set { age = value; } }
 
-         
+
         public Emploee()
-        { 
-            firstName= string.Empty;
-            lastName= string.Empty;
-            age= 0;
+        {
+            firstName = string.Empty;
+            lastName = string.Empty;
+            age = 0;
             Emploee.emploeeCount++;
         }
 
@@ -40,7 +40,7 @@ namespace ChallengeApp
 
         public bool AddGrades(float grades)
         {
-            if (grades >= 0 && grades <=100)
+            if (grades >= 0 && grades <= 100)
             {
                 this.grades.Add(grades);
                 return true;
@@ -55,15 +55,18 @@ namespace ChallengeApp
         public bool AddGrades(string grades)
         {
             int a = 5;
-            float.TryParse(a, out float resutl);
+            //float.TryParse(a, out float resutl);
+
+            float r = a;
+
 
             if (float.TryParse(grades, out float result))
             {
-                this.AddGrades(result); 
+                this.AddGrades(result);
                 return true;
             }
             else
-                return false;  
+                return false;
         }
         /*
         public bool RemoveGrades(int grades) 
