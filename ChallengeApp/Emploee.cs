@@ -54,12 +54,6 @@ namespace ChallengeApp
 
         public bool AddGrades(string grades)
         {
-            int a = 5;
-            //float.TryParse(a, out float resutl);
-
-            float r = a;
-
-
             if (float.TryParse(grades, out float result))
             {
                 this.AddGrades(result);
@@ -68,6 +62,27 @@ namespace ChallengeApp
             else
                 return false;
         }
+
+        public void AddGrades(char grades)
+        {
+            var result = char.GetNumericValue(grades);
+            this.AddGrades(result);
+        } 
+
+        public void AddGrades(double grades)
+        {
+            this.AddGrades((float)grades);
+        }
+                
+        /*
+        public void AddGrades(decimal grades)
+        {
+            this.AddGrades((float)grades);
+        }
+        */
+
+
+
         /*
         public bool RemoveGrades(int grades) 
         {

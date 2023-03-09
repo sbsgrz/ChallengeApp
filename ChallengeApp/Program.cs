@@ -55,7 +55,7 @@ Console.WriteLine();
 Console.WriteLine("And the winner is: " + theWinner.FirstName + " " + theWinner.LastName + " - grade: " + theWinner.GetStatistics().Sum);
 
 /*
-char
+
 sbyte
 byte
 short
@@ -64,12 +64,13 @@ int
 uint
 long
 ulong
-decimal
+
+
 double
-float 
+char 
 */
 
-char gradeChar = '1';
+
 sbyte gradeSbyte = 1;
 byte gradeByte = 1;
 short gradeShort = 1;
@@ -77,29 +78,36 @@ ushort gradeUshort = 1;
 int gradeInt = 1;
 uint gradeUint = 1;
 long gradeLong = 1;
-<<<<<<< HEAD
 ulong gradeUlong = 1;
-=======
-ulong gradeULong = 1;
->>>>>>> f5093d3f611308efb7e7c7c553876477fdbe64dc
-decimal gradeDecimal = 1;
+
 double gradeDouble = 1;
+char gradeChar = '1';
 
-Emploee emploeeTesty = new Emploee();
+decimal gradeDecimal = 1;
 
-Console.WriteLine("Testy różnych typów");
+Emploee emploeeTesty = new Emploee("Testy","Typow",20);
+
+Console.WriteLine("\nTesty różnych typów");
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeChar);
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeSbyte);
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeByte);
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeShort);
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeUshort);
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeInt);
-<<<<<<< HEAD
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeUint);
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeLong);
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeUlong);
-emploeeTesty.AddGrades(gradeDecimal);
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
+emploeeTesty.AddGrades((float)gradeDecimal);
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeDouble);
-=======
-
->>>>>>> f5093d3f611308efb7e7c7c553876477fdbe64dc
+Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
