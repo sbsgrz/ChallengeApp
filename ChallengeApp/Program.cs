@@ -77,7 +77,11 @@ ushort gradeUshort = 1;
 int gradeInt = 1;
 uint gradeUint = 1;
 long gradeLong = 1;
+<<<<<<< HEAD
 ulong gradeUlong = 1;
+=======
+ulong gradeULong = 1;
+>>>>>>> f5093d3f611308efb7e7c7c553876477fdbe64dc
 decimal gradeDecimal = 1;
 double gradeDouble = 1;
 
@@ -90,8 +94,12 @@ emploeeTesty.AddGrades(gradeByte);
 emploeeTesty.AddGrades(gradeShort);
 emploeeTesty.AddGrades(gradeUshort);
 emploeeTesty.AddGrades(gradeInt);
+<<<<<<< HEAD
 emploeeTesty.AddGrades(gradeUint);
 emploeeTesty.AddGrades(gradeLong);
 emploeeTesty.AddGrades(gradeUlong);
 emploeeTesty.AddGrades(gradeDecimal);
 emploeeTesty.AddGrades(gradeDouble);
+=======
+
+>>>>>>> f5093d3f611308efb7e7c7c553876477fdbe64dc
