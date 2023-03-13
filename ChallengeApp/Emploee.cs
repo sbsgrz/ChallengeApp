@@ -44,12 +44,15 @@ namespace ChallengeApp
             {
                 this.grades.Add(grades);
                 return true;
+                Console.WriteLine("FLOAT");
             }
             else
             {
                 return false;
                 // Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade - podana wartość jest poza skalą");
             }
+            
+
         }
 
         public bool AddGrades(string grades)

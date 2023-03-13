@@ -111,3 +111,4 @@ emploeeTesty.AddGrades((float)gradeDecimal);
 Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
 emploeeTesty.AddGrades(gradeDouble);
 Console.WriteLine($"{emploeeTesty.FirstName} punkty: {emploeeTesty.GetStatistics().Sum}");
+
