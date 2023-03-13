@@ -9,8 +9,8 @@ namespace ChallengeApp.Tests
         {
             // arrange
             var e = new Emploee("Jan", "Kowalski", 30);
-            e.AddGrades(5);
-            e.AddGrades(10);
+            e.AddGrade(5);
+            e.AddGrade(10);
             
             // act
             Statistics result = e.GetStatistics();
@@ -28,7 +28,7 @@ namespace ChallengeApp.Tests
         {
             //arrange
             var e = new Emploee("Jan", "Kowalski", 30);
-            e.AddGrades(10);
+            e.AddGrade(10);
             e.RemoveGrades(2);
 
             //act
@@ -44,8 +44,8 @@ namespace ChallengeApp.Tests
         {
             //arrange
             var e = new Emploee("Jan", "Kowalski", 30);
-            e.AddGrades(10);
-            e.AddGrades(-5);
+            e.AddGrade(10);
+            e.AddGrade(-5);
 
             //act
             Statistics result = e.GetStatistics();
@@ -60,7 +60,7 @@ namespace ChallengeApp.Tests
         {
             //arrange
             var e = new Emploee("Jan", "Kowalski", 30);
-            e.AddGrades(20);
+            e.AddGrade(20);
             e.RemoveGrades(-5);
 
             //act
@@ -75,7 +75,7 @@ namespace ChallengeApp.Tests
         {
             //arrange
             var e = new Emploee("Jan", "Kowalski", 30);
-            e.AddGrades(20);
+            e.AddGrade(20);
             e.RemoveGrades(5);
 
             //act
