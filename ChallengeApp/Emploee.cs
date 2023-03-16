@@ -33,7 +33,7 @@ namespace ChallengeApp
             if (grade >= 0 && grade <= 100)
                 this.grades.Add(grade);
             else
-                Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade - podana wartość jest poza zakresem");
+                Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade - wartość poza zakresem");
         }
 
         public void AddGrade(string grade)
@@ -41,7 +41,7 @@ namespace ChallengeApp
             if (float.TryParse(grade, out float result))
                 this.AddGrade(result);
             else
-                Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade(String) - konwersja nieudana");
+                Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade(String) - nieudana konwersja");
         }
 
         public void AddGrade(char grade)
