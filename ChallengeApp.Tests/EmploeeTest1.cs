@@ -8,7 +8,7 @@ namespace ChallengeApp.Tests
         public void WhenUserCollectTwogradess_ShouldCorrectResults()
         {
             // arrange
-            var e = new Emploee("Jan", "Kowalski", 30);
+            var e = new Emploee("Jan", "Kowalski");
             e.AddGrade(5);
             e.AddGrade(10);
             
@@ -43,7 +43,7 @@ namespace ChallengeApp.Tests
         public void WhenUserTryToAddGradesWithNegativeNumber_ShouldDoNotAdd()
         {
             //arrange
-            var e = new Emploee("Jan", "Kowalski", 30);
+            var e = new Emploee("Jan", "Kowalski");
             e.AddGrade(10);
             e.AddGrade(-5);
 

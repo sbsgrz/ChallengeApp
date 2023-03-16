@@ -1,6 +1,38 @@
-﻿// Klasy dzień 6
-using ChallengeApp;
+﻿using ChallengeApp;
 
+Console.WriteLine("Witam w aplikacji ChallengeApp. Podaj oceny pracownika (q - kończy wprowadzanie)");
+
+var emploee = new Emploee();
+
+
+while(true)
+{
+    Console.WriteLine("Podaj wartość");
+    var grade = Console.ReadLine();
+    
+    if(grade != "q")
+        emploee.AddGrade(grade);
+    else
+        break;
+}
+
+Statistics emploeeStatistics = new Statistics();
+emploeeStatistics = emploee.GetStatistics();
+
+Console.WriteLine("Statystyki:");
+Console.WriteLine($"Min:    {emploeeStatistics.Min}");
+Console.WriteLine($"Max:    {emploeeStatistics.Max}");
+Console.WriteLine($"Sum:    {emploeeStatistics.Sum}");
+Console.WriteLine($"Avg:    {emploeeStatistics.Average:N2}");
+Console.WriteLine($"AvgL:   {emploeeStatistics.AverageLetter}");
+
+
+
+// Dzień 12 -
+// 1) średnia w formie char
+// 2) wprowadzanie danych przez użytkownika
+// 3) Testy
+/*
 var emploee = new Emploee("Jan", "Kowalski", 35);
 
 Random r = new();
@@ -25,4 +57,4 @@ stats.Add(emploee.GetStatisticsWithForEach());
 stats.Add(emploee.GetStatisticsWithFor());
 stats.Add(emploee.GetStatisticsWithDoWhile());
 stats.Add(emploee.GetStatisticsWithWhile());
-
+*/
