@@ -110,9 +110,7 @@ namespace ChallengeApp
                         statistics.AverageLetter = 'E';
                         break;
                 }
-            }
-            
-            
+            }            
             return statistics;
         }
     }

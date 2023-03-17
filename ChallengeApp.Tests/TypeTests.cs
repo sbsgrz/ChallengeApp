@@ -6,8 +6,8 @@
         public void WhenCompareTwoReferenceVariablesPointingObjectsWithTheSameProperties_ShouldNotBeEqual()
         {
             // arrange
-            var emploee1 = new Emploee("Jan", "Kowalski", 20);
-            var emploee2 = new Emploee("Jan", "Kowalski", 20);
+            var emploee1 = new Emploee("Jan", "Kowalski");
+            var emploee2 = new Emploee("Jan", "Kowalski");
 
             // act
 
@@ -19,7 +19,7 @@
         public void WhenCompareTwoReferenceVariablesPointingTheSameObject_ShouldNotBeEqual() 
         {
             // arrange
-            var emploee1 = new Emploee("Jan", "Kowalski", 20);
+            var emploee1 = new Emploee("Jan", "Kowalski");
             var emploee2 = emploee1;
 
             //act
