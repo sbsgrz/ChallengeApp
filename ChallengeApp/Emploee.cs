@@ -33,17 +33,23 @@ namespace ChallengeApp
             if (grade >= 0 && grade <= 100)
                 this.grades.Add(grade);
             else
-                Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade - wartość poza zakresem");
+                throw new Exception("Value out of range. Enter a value between 0 and 100.");
         }
 
         public void AddGrade(string grade)
         {
-            if (float.TryParse(grade, out float result))
+            //var list = new List<string> { "A", "a", "B", "b", "C", "c", "D", "d", "E", "e" };
+
+            //if (list.Contains(grade))
+            if (grade.Count() == 1)
+                AddGrade(grade[0]);
+            else if (float.TryParse(grade, out float result))
                 this.AddGrade(result);
             else
-                Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade(String) - nieudana konwersja");
+                throw new Exception("Conversion failed.");
         }
 
+        
         public void AddGrade(char grade)
         {
             switch(grade)
@@ -64,19 +70,19 @@ namespace ChallengeApp
                     this.AddGrade(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong letter");
+                    throw new Exception("Wrong Letter.");
                     break;
             }
             
-            /*
-            var result = char.GetNumericValue(grade);
-            if(result != -1)
-                this.AddGrade(result);
-            else
-                Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade(Char) - konwersja nieudana");
-            */
+            
+            // var result = char.GetNumericValue(grade);
+            // if(result != -1)
+            //     this.AddGrade(result);
+            // else
+            //     Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade(Char) - konwersja nieudana");
+          
         }
-
+        
         public void AddGrade(double grade)
         {
             this.AddGrade((float)grade);

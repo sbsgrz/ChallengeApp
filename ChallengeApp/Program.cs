@@ -4,22 +4,24 @@ Console.WriteLine("Witam w aplikacji ChallengeApp. Podaj oceny pracownika (q - k
 
 var emploee = new Emploee();
 
-var list = new List<string> { "A", "a", "B", "b", "C", "c", "D", "d", "E", "e" };
-
 while (true)
 {
     Console.WriteLine("Podaj wartość");
-    var grade = Console.ReadLine();
+    var input = Console.ReadLine();
     
-    if(grade == "q")
+    if(input == "q")
     {
         break;
     }
-
-    if (list.Contains(grade))
-        emploee.AddGrade(grade[0]);
-    else
-        emploee.AddGrade(grade);
+    
+    try
+    {
+        emploee.AddGrade(input);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }    
 }
 
 Statistics emploeeStatistics = new Statistics();
