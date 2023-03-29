@@ -1,32 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace ChallengeApp
 {
-    public class Emploee
+    public class Emploee : Person, IEmploee 
     {
-        private string firstName;
-        private string lastName;
-
         private List<float> grades = new List<float>();
 
-        public string FirstName { get { return this.firstName; } set { this.firstName = value; } }
-        public string LastName { get { return this.lastName; } set { this.lastName = value; } }
+        public Emploee() : base(string.Empty, string.Empty, true)
+        { }
 
-        public Emploee()
-        {
-            firstName = string.Empty;
-            lastName = string.Empty;
-        }
-
-        public Emploee(string firstName, string lastName)
-        {
-            this.firstName = firstName;
-            this.lastName = lastName;
-        }
+        public Emploee(string FirstName, string LastName, bool IsWoman) : base(FirstName,LastName,IsWoman)
+        { }
 
         public void AddGrade(float grade)
         {
@@ -38,10 +21,9 @@ namespace ChallengeApp
 
         public void AddGrade(string grade)
         {
-            //var list = new List<string> { "A", "a", "B", "b", "C", "c", "D", "d", "E", "e" };
+            var list = new List<string> { "A", "a", "B", "b", "C", "c", "D", "d", "E", "e" };
 
-            //if (list.Contains(grade))
-            if (grade.Count() == 1)
+            if (list.Contains(grade))           
                 AddGrade(grade[0]);
             else if (float.TryParse(grade, out float result))
                 this.AddGrade(result);
@@ -71,16 +53,7 @@ namespace ChallengeApp
                     break;
                 default:
                     throw new Exception("Wrong Letter.");
-                    break;
-            }
-            
-            
-            // var result = char.GetNumericValue(grade);
-            // if(result != -1)
-            //     this.AddGrade(result);
-            // else
-            //     Console.WriteLine($"Pracownik {this.firstName} {this.lastName} funkcja AddGrade(Char) - konwersja nieudana");
-          
+            }         
         }
         
         public void AddGrade(double grade)

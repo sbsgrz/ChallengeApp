@@ -3,6 +3,7 @@
 Console.WriteLine("Witam w aplikacji ChallengeApp. Podaj oceny pracownika (q - kończy wprowadzanie)");
 
 var emploee = new Emploee();
+emploee.ToString();
 
 while (true)
 {
