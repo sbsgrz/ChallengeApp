@@ -1,15 +1,27 @@
 ﻿
 namespace ChallengeApp
 {
-    public class Emploee : Person, IEmploee 
+    public class Emploee : IEmploee 
     {
         private List<float> grades = new List<float>();
 
-        public Emploee() : base(string.Empty, string.Empty, true)
-        { }
+        public string Name { get;}
+        public string Surname { get;}
+        public char Sex { get;}
 
-        public Emploee(string FirstName, string LastName, bool IsWoman) : base(FirstName,LastName,IsWoman)
-        { }
+        public Emploee()
+        { 
+            this.Name = string.Empty;
+            this.Surname = string.Empty;
+            this.Sex = ' ';
+        }
+
+        public Emploee(string name, string surname, char sex)
+        { 
+            this.Name=name;
+            this.Surname=surname;
+            this.Sex=sex;
+        }
 
         public void AddGrade(float grade)
         {
@@ -31,7 +43,6 @@ namespace ChallengeApp
                 throw new Exception("Conversion failed.");
         }
 
-        
         public void AddGrade(char grade)
         {
             switch(grade)
@@ -57,6 +68,11 @@ namespace ChallengeApp
         }
         
         public void AddGrade(double grade)
+        {
+            this.AddGrade((float)grade);
+        }
+
+        public void AddGrade(int grade)
         {
             this.AddGrade((float)grade);
         }
