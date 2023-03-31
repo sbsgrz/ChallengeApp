@@ -2,14 +2,18 @@
 {
     internal interface IEmploee
     {
-        public Statistics GetStatistics();
+        string Name { get;}    
+        string Surname { get;}
 
-        public void AddGrade(float grade);
+        char Sex { get;}
+        Statistics GetStatistics();
 
-        public void AddGrade(string grade);
+        void AddGrade(float grade);
 
-        public void AddGrade(char grade);
+        void AddGrade(string grade);
 
-        public void AddGrade(double grade);
+        void AddGrade(char grade);
+
+        void AddGrade(double grade); 
     }
 }

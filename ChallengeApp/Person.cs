@@ -6,13 +6,13 @@ namespace ChallengeApp
 
         protected Person(string FirstName, string LastName, bool IsWoman)
         {
-            this.firstName= FirstName;
-            this.lastName= LastName;
+            this.Name= FirstName;
+            this.Surname= LastName;
             this.isWoman= IsWoman;
         }
 
-        protected string firstName { get; set; }
-        protected string lastName { get; set; }
+        protected string Name { get; set; }
+        protected string Surname { get; set; }
         protected bool isWoman { get; set; }
     }
 }
