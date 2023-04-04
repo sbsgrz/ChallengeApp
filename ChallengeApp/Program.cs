@@ -1,9 +1,9 @@
 ﻿using ChallengeApp;
 
-Console.WriteLine("Witam w aplikacji ChallengeApp. Podaj oceny pracownika (q - kończy wprowadzanie)");
-
 var emploee = new Emploee();
-emploee.ToString();
+var supervisor = new Supervisor();
+
+Console.WriteLine("Witam w aplikacji ChallengeApp. Podaj oceny PRACOWNIKA (q - kończy wprowadzanie)");
 
 while (true)
 {
@@ -25,14 +25,50 @@ while (true)
     }    
 }
 
+
+Console.WriteLine("\n\nPodaj oceny PRZEŁOŻONEGO (q - kończy wprowadzanie)");
+
+while (true)
+{
+    Console.WriteLine("Podaj wartość");
+    var input = Console.ReadLine();
+
+    if (input == "q")
+    {
+        break;
+    }
+
+    try
+    {
+        supervisor.AddGrade(input);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+}
+
+
+
 Statistics emploeeStatistics = new Statistics();
 emploeeStatistics = emploee.GetStatistics();
 
-Console.WriteLine("Statystyki:");
+Statistics supervisorStatistics = new Statistics();
+supervisorStatistics = supervisor.GetStatistics();
+
+Console.WriteLine("Statystyki - PRACOWNIK:");
 Console.WriteLine($"Min:    {emploeeStatistics.Min}");
 Console.WriteLine($"Max:    {emploeeStatistics.Max}");
 Console.WriteLine($"Sum:    {emploeeStatistics.Sum}");
 Console.WriteLine($"Avg:    {emploeeStatistics.Average:N2}");
 Console.WriteLine($"AvgL:   {emploeeStatistics.AverageLetter}");
+
+
+Console.WriteLine("\n\nStatystyki - PRZEŁOŻONY:");
+Console.WriteLine($"Min:    {supervisorStatistics.Min}");
+Console.WriteLine($"Max:    {supervisorStatistics.Max}");
+Console.WriteLine($"Sum:    {supervisorStatistics.Sum}");
+Console.WriteLine($"Avg:    {supervisorStatistics.Average:N2}");
+Console.WriteLine($"AvgL:   {supervisorStatistics.AverageLetter}");
 
 Console.ReadLine();
