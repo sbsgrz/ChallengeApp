@@ -1,6 +1,18 @@
 ﻿using ChallengeApp;
 
-var emploee = new Emploee();
+
+var emploeeIF = new Emploee();
+
+try
+{
+    emploeeIF.AddGrade(2.35F);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+/*var emploee = new Emploee();
 var supervisor = new Supervisor();
 
 Console.WriteLine("Witam w aplikacji ChallengeApp. Podaj oceny PRACOWNIKA (q - kończy wprowadzanie)");
@@ -9,12 +21,12 @@ while (true)
 {
     Console.WriteLine("Podaj wartość");
     var input = Console.ReadLine();
-    
-    if(input == "q")
+
+    if (input == "q")
     {
         break;
     }
-    
+
     try
     {
         emploee.AddGrade(input);
@@ -22,7 +34,7 @@ while (true)
     catch (Exception ex)
     {
         Console.WriteLine(ex.Message);
-    }    
+    }
 }
 
 
@@ -71,4 +83,4 @@ Console.WriteLine($"Sum:    {supervisorStatistics.Sum}");
 Console.WriteLine($"Avg:    {supervisorStatistics.Average:N2}");
 Console.WriteLine($"AvgL:   {supervisorStatistics.AverageLetter}");
 
-Console.ReadLine();
+Console.ReadLine();*/
