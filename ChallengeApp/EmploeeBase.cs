@@ -8,6 +8,10 @@
 
         public char Sex { get; private set; }
 
+        public EmploeeBase()
+        {
+
+        }
 
         public EmploeeBase(string name, string surname, char sex)
         {

@@ -1,16 +1,32 @@
 ﻿using ChallengeApp;
 
 
-var emploeeIF = new Emploee();
-
+var emploeeIF = new EmploeeInFile();
+Statistics result;
 try
 {
     emploeeIF.AddGrade(2.35F);
+    emploeeIF.AddGrade('A');
+    emploeeIF.AddGrade('B');
+    emploeeIF.AddGrade(2.35D);
+    emploeeIF.AddGrade(2.35D);
+
+    emploeeIF.AddGrade('2');
+    emploeeIF.AddGrade("2.35");
+
+
 }
 catch (Exception ex)
 {
     Console.WriteLine(ex.Message);
 }
+finally
+{
+    result = emploeeIF.GetStatistics();
+}
+
+Console.WriteLine($"Wyniki: Min: {result.Min}, Max: {result.Max}, Sum: {result.Sum} Avg: {result.Average}, AvgLetter: {result.AverageLetter}");
+
 
 /*var emploee = new Emploee();
 var supervisor = new Supervisor();
