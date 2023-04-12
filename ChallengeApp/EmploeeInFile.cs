@@ -7,7 +7,8 @@ namespace ChallengeApp
     {
 
         public const string fileName = "grades.txt";
-        
+        public override event GradeAddedDelegate GradeAdded;
+
         public EmploeeInFile() : base()
         {
         }
@@ -22,6 +23,12 @@ namespace ChallengeApp
             using (var writer = File.AppendText(fileName))
             {
                 writer.WriteLine(grade);
+
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
+                
             }
         }
 
@@ -101,9 +108,7 @@ namespace ChallengeApp
                         result.AverageLetter = 'E';
                         break;
                 }
-
             }
-
             return result;
         }
 

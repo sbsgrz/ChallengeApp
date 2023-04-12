@@ -8,9 +8,11 @@
 
         public char Sex { get; private set; }
 
+        public delegate void GradeAddedDelegate(object sender, EventArgs args);
+        public abstract event GradeAddedDelegate GradeAdded;
+
         public EmploeeBase()
         {
-
         }
 
         public EmploeeBase(string name, string surname, char sex)
@@ -34,6 +36,5 @@
         {
             Console.WriteLine($"My name is: {Name} {Surname}");
         }
-
     }
 }
