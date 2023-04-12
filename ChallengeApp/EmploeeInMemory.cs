@@ -25,7 +25,5 @@ namespace ChallengeApp
         {
             return grades;
         }
-
-
     }
 }

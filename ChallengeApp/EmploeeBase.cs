@@ -60,30 +60,10 @@
             var result = new Statistics();
             List<float> grades = new List<float>();
             grades = GetGrades();
-            if (grades.Count > 0)
+
+            foreach (var grade in grades) 
             {
-                result.Min = grades.Min();
-                result.Max = grades.Max();
-                result.Average = grades.Average();
-                result.Sum = grades.Sum();
-                switch (result.Average)
-                {
-                    case var average when average >= 80:
-                        result.AverageLetter = 'A';
-                        break;
-                    case var average when average >= 60:
-                        result.AverageLetter = 'B';
-                        break;
-                    case var average when average >= 40:
-                        result.AverageLetter = 'C';
-                        break;
-                    case var average when average >= 20:
-                        result.AverageLetter = 'D';
-                        break;
-                    default:
-                        result.AverageLetter = 'E';
-                        break;
-                }
+                result.AddGrade((float)grade);
             }
             return result;
         }
