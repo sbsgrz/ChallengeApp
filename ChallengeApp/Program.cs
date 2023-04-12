@@ -1,8 +1,8 @@
 ﻿using ChallengeApp;
 
 
-var emploeeIF = new EmploeeInFile();
-var emploeeIM = new EmploeeInMemory();
+var emploeeIF = new EmploeeInFile("Jan","Kowalski");
+var emploeeIM = new EmploeeInMemory("Jan","Kowalski");
 
 
 void EmploeeGradeAdded(object sender, EventArgs args)
@@ -26,22 +26,25 @@ while (true)
         break;
     }
 
-    try
-    {
-        emploeeIF.AddGrade(input);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine(ex.Message);
-    }
+    if(input != null)
+    { 
+        try
+        {  
+            emploeeIF.AddGrade(input);   
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
 
-    try
-    {
-        emploeeIM.AddGrade(input);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine(ex.Message);
+        try
+        {
+            emploeeIM.AddGrade(input);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }
 

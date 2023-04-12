@@ -4,7 +4,6 @@
     {
         string Name { get;}    
         string Surname { get;}
-        char Sex { get;}
         
         Statistics GetStatistics();
 
