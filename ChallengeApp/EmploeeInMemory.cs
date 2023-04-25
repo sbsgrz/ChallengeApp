@@ -3,42 +3,27 @@ namespace ChallengeApp
 {
     public class EmploeeInMemory : EmploeeBase
     {
+        private List<float> grades = new List<float>();
+        public override event GradeAddedDelegate? GradeAdded;
 
-        public EmploeeInMemory(string name, string surname, char sex) 
-            : base(name, surname, sex)
+        public EmploeeInMemory(string name, string surname) 
+            : base(name, surname)
         {
         }
 
         public override void AddGrade(float grade)
         {
-            throw new NotImplementedException();
+            grades.Add(grade);
+            
+            if (GradeAdded != null)
+            {
+                GradeAdded(this, new EventArgs());
+            }
         }
 
-        public override void AddGrade(string grade)
+        protected override List<float> GetGrades()
         {
-            throw new NotImplementedException();
-        }
-
-        public override void AddGrade(char grade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void AddGrade(double grade)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override Statistics GetStatistics()
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public override void SayHello()
-        {
-            Console.WriteLine("Hi!!!");
-            base.SayHello();
+            return grades;
         }
     }
 }

@@ -1,41 +1,24 @@
 ﻿using ChallengeApp;
 
 
-var emploeeIF = new EmploeeInFile();
-Statistics result;
-try
-{
-    emploeeIF.AddGrade(2.35F);
-    emploeeIF.AddGrade('A');
-    emploeeIF.AddGrade('B');
-    emploeeIF.AddGrade(2.35D);
-    emploeeIF.AddGrade(2.35D);
-
-    emploeeIF.AddGrade('2');
-    emploeeIF.AddGrade("2.35");
+var emploeeIF = new EmploeeInFile("Jan","Kowalski");
+var emploeeIM = new EmploeeInMemory("Jan","Kowalski");
 
 
-}
-catch (Exception ex)
+void EmploeeGradeAdded(object sender, EventArgs args)
 {
-    Console.WriteLine(ex.Message);
-}
-finally
-{
-    result = emploeeIF.GetStatistics();
+    Console.WriteLine($"New rating has been added: {sender.ToString()}");    
 }
 
-Console.WriteLine($"Wyniki: Min: {result.Min}, Max: {result.Max}, Sum: {result.Sum} Avg: {result.Average}, AvgLetter: {result.AverageLetter}");
+emploeeIF.GradeAdded += EmploeeGradeAdded;
+emploeeIM.GradeAdded += EmploeeGradeAdded;
 
 
-/*var emploee = new Emploee();
-var supervisor = new Supervisor();
-
-Console.WriteLine("Witam w aplikacji ChallengeApp. Podaj oceny PRACOWNIKA (q - kończy wprowadzanie)");
+Console.WriteLine("Hello! Provide emploee evaluations (q - finishes entering)");
 
 while (true)
 {
-    Console.WriteLine("Podaj wartość");
+    Console.WriteLine("Enter a value");
     var input = Console.ReadLine();
 
     if (input == "q")
@@ -43,60 +26,51 @@ while (true)
         break;
     }
 
-    try
-    {
-        emploee.AddGrade(input);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine(ex.Message);
+    if(input != null)
+    { 
+        try
+        {  
+            emploeeIF.AddGrade(input);   
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        try
+        {
+            emploeeIM.AddGrade(input);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }
 
+Statistics emploeeIFStatistics = new Statistics();
+emploeeIFStatistics = emploeeIF.GetStatistics();
 
-Console.WriteLine("\n\nPodaj oceny PRZEŁOŻONEGO (q - kończy wprowadzanie)");
+Statistics emploeeIMStatistics = new Statistics();
+emploeeIMStatistics = emploeeIM.GetStatistics();
 
-while (true)
+if (emploeeIFStatistics.Count > 0)
 {
-    Console.WriteLine("Podaj wartość");
-    var input = Console.ReadLine();
+    Console.WriteLine("Emploee statistics (IF):");
+    Console.WriteLine($"Min:    {emploeeIFStatistics.Min}");
+    Console.WriteLine($"Max:    {emploeeIFStatistics.Max}");
+    Console.WriteLine($"Sum:    {emploeeIFStatistics.Sum}");
+    Console.WriteLine($"Avg:    {emploeeIFStatistics.Average:N2}");
+    Console.WriteLine($"AvgL:   {emploeeIFStatistics.AverageLetter}");
 
-    if (input == "q")
-    {
-        break;
-    }
-
-    try
-    {
-        supervisor.AddGrade(input);
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine(ex.Message);
-    }
+    Console.WriteLine("Emploee statistics (IM):");
+    Console.WriteLine($"Min:    {emploeeIMStatistics.Min}");
+    Console.WriteLine($"Max:    {emploeeIMStatistics.Max}");
+    Console.WriteLine($"Sum:    {emploeeIMStatistics.Sum}");
+    Console.WriteLine($"Avg:    {emploeeIMStatistics.Average:N2}");
+    Console.WriteLine($"AvgL:   {emploeeIMStatistics.AverageLetter}");
 }
+else
+    Console.WriteLine("\nNO DATA ENTERED!!!");
 
-
-
-Statistics emploeeStatistics = new Statistics();
-emploeeStatistics = emploee.GetStatistics();
-
-Statistics supervisorStatistics = new Statistics();
-supervisorStatistics = supervisor.GetStatistics();
-
-Console.WriteLine("Statystyki - PRACOWNIK:");
-Console.WriteLine($"Min:    {emploeeStatistics.Min}");
-Console.WriteLine($"Max:    {emploeeStatistics.Max}");
-Console.WriteLine($"Sum:    {emploeeStatistics.Sum}");
-Console.WriteLine($"Avg:    {emploeeStatistics.Average:N2}");
-Console.WriteLine($"AvgL:   {emploeeStatistics.AverageLetter}");
-
-
-Console.WriteLine("\n\nStatystyki - PRZEŁOŻONY:");
-Console.WriteLine($"Min:    {supervisorStatistics.Min}");
-Console.WriteLine($"Max:    {supervisorStatistics.Max}");
-Console.WriteLine($"Sum:    {supervisorStatistics.Sum}");
-Console.WriteLine($"Avg:    {supervisorStatistics.Average:N2}");
-Console.WriteLine($"AvgL:   {supervisorStatistics.AverageLetter}");
-
-Console.ReadLine();*/
+Console.ReadLine();
