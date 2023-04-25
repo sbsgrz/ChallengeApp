@@ -45,6 +45,5 @@ namespace ChallengeApp
             }
             return grades;
         }
-          
     }
 }

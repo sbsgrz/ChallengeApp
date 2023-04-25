@@ -7,12 +7,12 @@ var emploeeIM = new EmploeeInMemory("Jan","Kowalski");
 
 void EmploeeGradeAdded(object sender, EventArgs args)
 {
-    Console.WriteLine($"New rating has been added: {sender.ToString()}");
-    
+    Console.WriteLine($"New rating has been added: {sender.ToString()}");    
 }
 
 emploeeIF.GradeAdded += EmploeeGradeAdded;
 emploeeIM.GradeAdded += EmploeeGradeAdded;
+
 
 Console.WriteLine("Hello! Provide emploee evaluations (q - finishes entering)");
 
